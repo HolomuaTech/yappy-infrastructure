@@ -100,6 +100,12 @@ This document outlines the architecture of the Yappy WordPress site, hosted on A
 - **Site Address (URL):** `https://yappy.holomuatech.com`
 - These fields are immutable in the UI due to Bitnami settings; overridden via `wp-config.php`.
 
+  $PRIMARY_DOMAIN = 'yappy.holomuatech.com';
+  // $PRIMARY_DOMAIN = 'yappygroup.com';
+  define('WP_HOME', 'https://' . $PRIMARY_DOMAIN);
+  define('WP_SITEURL', 'https://' . $PRIMARY_DOMAIN);
+  $_SERVER['HTTPS'] = 'on';
+
 ### 5.2 Domain Aliases
 
 - Secondary domains redirect or resolve to `yappy.holomuatech.com` due to the primary `SITEURL` setting.
